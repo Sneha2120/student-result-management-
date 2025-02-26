@@ -1,0 +1,29 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/student_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Dimpal@123</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup (careful in production!) -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mention all entity classes here -->
+        <mapping class="org.project.student.entity.Admin"/>
+        <mapping class="org.project.student.entity.Student"/>
+        <mapping class="org.project.student.entity.Subject"/>
+        <mapping class="org.project.student.entity.Result"/>
+        <mapping class="org.project.student.entity.Marks"/>
+    </session-factory>
+</hibernate-configuration>
